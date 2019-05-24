@@ -3,6 +3,8 @@
 import scapy.all as scapy
 import time
 
+# echo 1 > /proc/sys/net/ipv4/ip_forward
+
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst='ff:ff:ff:ff:ff:ff')
